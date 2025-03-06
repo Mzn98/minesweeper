@@ -84,17 +84,18 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [winner, setWinner] = useState(false);
 
-  useEffect(() => {
-    startNewGame();
-  }, [difficulty]);
-
-  const startNewGame = () => {
+  const startNewGame = useCallback(() => {
     const config = difficulties[difficulty];
     const newBoard = createBoard(config.rows, config.cols, config.mines, difficulty);
     setBoard(newBoard);
     setGameOver(false);
     setWinner(false);
-  };
+  }, [difficulty]);
+
+  useEffect(() => {
+    startNewGame();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [difficulty, startNewGame]);
 
   const handleCellClick = (x, y) => {
     if (gameOver || winner) return;
