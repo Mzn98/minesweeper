@@ -1,0 +1,30 @@
+/* App.css */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.cell {
+  background: #c0c0c0;
+  border: 2px outset #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  aspect-ratio: 1;
+  transition: background 0.2s;
+}
+
+.cell.revealed {
+  background: #bdbdbd;
+  border: 1px solid #7b7b7b;
+}
+
+.cell:not(.revealed):hover {
+  background: #d0d0d0;
+}
