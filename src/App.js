@@ -1,5 +1,5 @@
 // App.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './App.css';
 
 const difficulties = {
